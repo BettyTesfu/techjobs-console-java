@@ -93,8 +93,10 @@ public class JobData {
         for (HashMap<String, String> row : allJobs) {
 
             String aValue = row.get(column);
+            String loweraValue;
+            loweraValue = aValue.toLowerCase();
 
-            if (aValue.contains(value)) {
+            if (loweraValue.contains(value)) {
                 jobs.add(row);
             }
         }
@@ -179,6 +181,7 @@ public class JobData {
         } catch (IOException e) {
             System.out.println("Failed to load job data");
             e.printStackTrace();
+
         }
     }
 
